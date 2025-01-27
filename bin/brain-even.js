@@ -1,23 +1,13 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
+import {
+  askName, getRandomNumber, isNumberEven, isAnswerEven,
+} from '../src/index';
 
-const getRandomNumber = () => {
-  const max = 100;
-  return Math.floor(Math.random() * max);
-};
-
-const isNumberEven = (number) => (number % 2 === 0);
-
-const isAnswerEven = (answer) => (answer === 'yes');
-
-let name = '';
 let answer;
 let number;
 
-console.log('Welcome to the Brain Games!');
-name = readlineSync.question('May I have your name? ');
-console.log(`Hello, ${name}!`);
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
+const name = askName();
 
 let i = 1;
 let isAnswerTrue = true;
