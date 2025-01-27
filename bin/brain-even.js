@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
+
 import {
   askName, getRandomNumber, isNumberEven, isAnswerEven,
-} from '../src/index';
+// eslint-disable-next-line import/extensions
+} from '../src/index.js';
 
 let answer;
 let number;
