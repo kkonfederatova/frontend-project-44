@@ -51,8 +51,10 @@ export const getGCD = (a, b) => {
 };
 
 export const makeArithmeticProgression = () => {
-  const step = getRandomNumber(10) + 1;
-  const size = getRandomNumber(5) + 5;
+  const minProgressionStep = 1;
+  const minPogressionSize = 5;
+  const step = getRandomNumber(10) + minProgressionStep;
+  const size = getRandomNumber(5) + minPogressionSize;
   const base = getRandomNumber(10);
   const missingItemIndex = getRandomNumber(size - 1);
   let item = base;
@@ -76,4 +78,30 @@ export const isNumberPrime = (number) => {
   }
 
   return 'yes';
+};
+
+export const brainEven = (name) => {
+  let answer;
+  let number;
+  let i = 1;
+  let isAnswerTrue = true;
+  while (isAnswerTrue && i < 4) {
+    number = getRandomNumber();
+    console.log(`Question: ${number}`);
+    answer = readlineSync.question('Your answer: ');
+
+    if (isNumberEven(number) === isAnswerEven(answer)) {
+      console.log('Correct!');
+      isAnswerTrue = true;
+      i += 1;
+    } else {
+      console.log("'yes' is wrong answer ;(. Correct answer was 'no'.");
+      console.log(`Let's try again, ${name}!`);
+      isAnswerTrue = false;
+    }
+  }
+
+  if (isAnswerTrue === true) {
+    console.log(`Congratulations, ${name}!`);
+  }
 };
