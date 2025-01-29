@@ -48,3 +48,19 @@ export const getGCD = (a, b) => {
   }
   return a;
 };
+
+export const makeArithmeticProgression = () => {
+  const step = getRandomNumber(10) + 1;
+  const size = getRandomNumber(5) + 5;
+  const base = getRandomNumber(10);
+  const missingItemIndex = getRandomNumber(size - 1);
+  let item = base;
+  const arithmeticProgression = [];
+  for (let i = 0; i < size; i++) {
+    arithmeticProgression.push(item);
+    item += step;
+  }
+  const missingItem = arithmeticProgression[missingItemIndex];
+  arithmeticProgression[missingItemIndex] = '...';
+  return [arithmeticProgression, missingItem];
+};
