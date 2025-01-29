@@ -85,6 +85,8 @@ export const brainEven = (name) => {
   let number;
   let i = 1;
   let isAnswerTrue = true;
+
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
   while (isAnswerTrue && i < 4) {
     number = getRandomNumber();
     console.log(`Question: ${number}`);
@@ -111,6 +113,8 @@ export const brainCalc = (name) => {
   let answer;
   let i = 1;
   let isAnswerTrue = true;
+
+  console.log('What is the result of the expression?');
   while (isAnswerTrue && i < 4) {
     result = makeExpression();
     answer = readlineSync.question('Your answer: ');
@@ -136,6 +140,8 @@ export const brainGcd = (name) => {
   let correctAnswer;
   let i = 1;
   let isAnswerTrue = true;
+
+  console.log('Find the greatest common divisor of given numbers.');
   while (isAnswerTrue && i < 4) {
     a = getRandomNumber();
     b = getRandomNumber();
@@ -165,6 +171,7 @@ export const brainProgression = (name) => {
   let [arithmeticProgression, missingItem] = [];
   let i = 1;
   let isAnswerTrue = true;
+
   console.log('What number is missing in the progression?');
   while (isAnswerTrue && i < 4) {
     [arithmeticProgression, missingItem] = makeArithmeticProgression();
