@@ -66,13 +66,13 @@ export const makeArithmeticProgression = () => {
 };
 
 export const isNumberPrime = (number) => {
-  let count = 0;
-  const divider = number;
-  while (count < 3 && divider != 0) {
-    if (number % divider === 0) {
-      count += 1;
-    }
+  if (number < 2) return 'no';
+  if (number === 2 || number === 3) return 'yes';
+  if (number % 2 === 0 || number % 3 === 0) return 'no';
+
+  for (let i = 5; i * i <= number; i += 6) {
+    if (number % i === 0 || number % (i + 2) === 0) return 'no';
   }
 
-  return (count === 2) ? 'yes' : 'no';
+  return 'yes';
 };
