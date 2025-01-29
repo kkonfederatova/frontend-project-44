@@ -61,14 +61,14 @@ export const makeArithmeticProgression = () => {
     item += step;
   }
   const missingItem = arithmeticProgression[missingItemIndex];
-  arithmeticProgression[missingItemIndex] = '...';
+  arithmeticProgression[missingItemIndex] = '..';
   return [arithmeticProgression, missingItem];
 };
 
 export const isNumberPrime = (number) => {
   let count = 0;
   const divider = number;
-  while (count < 3 && divider !== 0) {
+  while (count < 3 && divider != 0) {
     if (number % divider === 0) {
       count += 1;
     }
