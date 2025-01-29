@@ -105,3 +105,26 @@ export const brainEven = (name) => {
     console.log(`Congratulations, ${name}!`);
   }
 };
+
+export const brainCalc = (name) => {
+  let result;
+  let answer;
+  let i = 1;
+  let isAnswerTrue = true;
+  while (isAnswerTrue && i < 4) {
+    result = makeExpression();
+    answer = readlineSync.question('Your answer: ');
+    if (result === parseInt(answer, 10)) {
+      console.log('Correct!');
+      isAnswerTrue = true;
+      i += 1;
+    } else {
+      console.log("'yes' is wrong answer ;(. Correct answer was 'no'.");
+      console.log(`Let's try again, ${name}!`);
+      isAnswerTrue = false;
+    }
+  }
+  if (isAnswerTrue === true) {
+    console.log(`Congratulations, ${name}!`);
+  }
+}
