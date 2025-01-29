@@ -4,7 +4,6 @@ export const askName = () => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
   return name;
 };
 
@@ -37,4 +36,15 @@ export const makeExpression = () => {
     default:
       console.log('There is no expression');
   }
+};
+
+export const getGCD = (a, b) => {
+  if (a === 0) return b;
+  if (b === 0) return a;
+  if (a === b) return a;
+
+  while (b !== 0) {
+    [a, b] = [b, a % b];
+  }
+  return a;
 };
