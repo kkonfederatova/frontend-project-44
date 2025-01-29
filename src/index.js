@@ -159,3 +159,30 @@ export const brainGcd = (name) => {
     console.log(`Congratulations, ${name}!`);
   }
 };
+
+export const brainProgression = (name) => {
+  let answer;
+  let [arithmeticProgression, missingItem] = [];
+  let i = 1;
+  let isAnswerTrue = true;
+  console.log('What number is missing in the progression?');
+  while (isAnswerTrue && i < 4) {
+    [arithmeticProgression, missingItem] = makeArithmeticProgression();
+    console.log(`Question: ${arithmeticProgression.join(' ')}`);
+    answer = readlineSync.question('Your answer: ');
+
+    if (parseInt(answer, 10) === missingItem) {
+      console.log('Correct!');
+      isAnswerTrue = true;
+      i += 1;
+    } else {
+      console.log("'yes' is wrong answer ;(. Correct answer was 'no'.");
+      console.log(`Let's try again, ${name}!`);
+      isAnswerTrue = false;
+    }
+  }
+
+  if (isAnswerTrue === true) {
+    console.log(`Congratulations, ${name}!`);
+  }
+};
