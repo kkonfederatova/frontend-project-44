@@ -127,4 +127,35 @@ export const brainCalc = (name) => {
   if (isAnswerTrue === true) {
     console.log(`Congratulations, ${name}!`);
   }
-}
+};
+
+export const brainGcd = (name) => {
+  let answer;
+  let a;
+  let b;
+  let correctAnswer;
+  let i = 1;
+  let isAnswerTrue = true;
+  while (isAnswerTrue && i < 4) {
+    a = getRandomNumber();
+    b = getRandomNumber();
+    console.log(`Question: ${a} ${b}`);
+    answer = readlineSync.question('Your answer: ');
+
+    correctAnswer = getGCD(a, b);
+
+    if (parseInt(answer, 10) === correctAnswer) {
+      console.log('Correct!');
+      isAnswerTrue = true;
+      i += 1;
+    } else {
+      console.log("'yes' is wrong answer ;(. Correct answer was 'no'.");
+      console.log(`Let's try again, ${name}!`);
+      isAnswerTrue = false;
+    }
+  }
+
+  if (isAnswerTrue === true) {
+    console.log(`Congratulations, ${name}!`);
+  }
+};
