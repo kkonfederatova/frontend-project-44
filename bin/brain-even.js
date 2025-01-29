@@ -10,6 +10,7 @@ let answer;
 let number;
 
 const name = askName();
+console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 let i = 1;
 let isAnswerTrue = true;
