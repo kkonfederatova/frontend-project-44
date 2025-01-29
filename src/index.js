@@ -64,3 +64,15 @@ export const makeArithmeticProgression = () => {
   arithmeticProgression[missingItemIndex] = '...';
   return [arithmeticProgression, missingItem];
 };
+
+export const isNumberPrime = (number) => {
+  let count = 0;
+  const divider = number;
+  while (count < 3 && divider !== 0) {
+    if (number % divider === 0) {
+      count += 1;
+    }
+  }
+
+  return (count === 2) ? 'yes' : 'no';
+};
