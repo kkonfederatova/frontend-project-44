@@ -10,7 +10,7 @@ let answer;
 let number;
 
 const name = askName();
-console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+console.log('Answer "yes" if given number is prime. Otherwise answer "no".\n');
 
 let i = 1;
 let isAnswerTrue = true;
@@ -25,11 +25,11 @@ while (isAnswerTrue && i < 4) {
     i += 1;
   } else {
     console.log("'yes' is wrong answer ;(. Correct answer was 'no'.");
-    console.log(`Let's try again, ${name}`);
+    console.log(`Let's try again, ${name}!`);
     isAnswerTrue = false;
   }
 }
 
 if (isAnswerTrue === true) {
-  console.log(`Congratulations, ${name}`);
+  console.log(`Congratulations, ${name}!`);
 }
