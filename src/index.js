@@ -44,6 +44,7 @@ export const getGCD = (a, b) => {
   if (a === b) return a;
 
   while (b !== 0) {
+    // eslint-disable-next-line no-param-reassign
     [a, b] = [b, a % b];
   }
   return a;
@@ -56,7 +57,7 @@ export const makeArithmeticProgression = () => {
   const missingItemIndex = getRandomNumber(size - 1);
   let item = base;
   const arithmeticProgression = [];
-  for (let i = 0; i < size; i++) {
+  for (let i = 0; i < size; i += 1) {
     arithmeticProgression.push(item);
     item += step;
   }
